@@ -3,7 +3,7 @@
   "displayName": "Haskell Syntax Highlighting",
   "description": "Syntax support for the Haskell programming language.",
   "version": "3.6.0",
-  "publisher": "justusadam",
+  "publisher": "justusadamtest",
   "engines": {
     "vscode": "^1.0.0"
   },
@@ -89,6 +89,18 @@
         "configuration": "./cabal-configuration.json"
       },
       {
+        "id": "cabal-project",
+        "aliases": [
+          "CabalProject",
+          "cabal-project"
+        ],
+        "extensions": [
+          "cabal.project",
+          "cabal.project.local"
+        ],
+        "configuration": "./cabal-configuration.json"
+      },
+      {
         "id": "C2Hs",
         "aliases": [
           "C2Hs",
@@ -167,6 +179,11 @@
         "language": "cabal",
         "scopeName": "source.cabal",
         "path": "./syntaxes/cabal.json"
+      },
+      {
+        "language": "cabal-project",
+        "scopeName": "cabal.source.project",
+        "path": "./syntaxes/cabalProject.json"
       },
       {
         "language": "C2Hs",
