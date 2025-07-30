@@ -6,66 +6,81 @@ patterns:
   - name: keyword.other.cabal
     match: |
       (?ix)(\n|^)
-        ( name
-        | version
-        | cabal-version
-        | build-type
-        | license(-file)?
-        | copyright
-        | author
-        | maintainer
-        | stability
-        | homepage
-        | bug-reports
-        | package-url
-        | synopsis
-        | data-(files|dir)
-        | description
-        | category
-        | extra-(source|doc|tmp)-files
-        | tested-with
-        | tests
+        ( tests
         | import
+        | (optional-|extra-)?packages
+        | benchmarks
+        | verbose
+        | build-(summary|log)
+        | remote-build-reporting
+        | report-planning-failure
+        | symlink-bindir
+        | jobs
+        | semaphore
+        | keep-going
+        | offline
+        | haddock-keep-temp-files 
+        | http-transport
+        | ignore-expiry
+        | remote-repo-cache
+        | (logs-|project-|build|store-)dir 
+        | project-file 
+        | ignore-project 
+        | (with-)?compiler
+        | with-hc-pkg 
+        | doc-index-file 
+        | package-dbs
+        | active-repositories 
+        | index-state
+        | constraints
+        | preferences
+        | cabal-lib-version
+        | solver 
+        | allow-(older|newer|boot-library-installs)
+        | write-ghc-environment-files 
+        | max-backjumps
+        | reorder-goals 
+        | (count|fine-grained)-conflicts
+        | minimize-conflict-set 
+        | strong-flags
+        | reject-unconstrained-dependencies
+        | per-component
+        | independent-goals 
+        | prefer-oldest
+        | extra-prog-path-shared-only
+        | multi-repl 
         ):
   - name: keyword.other.cabal
     match: |
       (?ix)^[ \t]+
-        ( (build(-tool)?|pkgconfig|setup)-depends
-        | (hs-source|include|extra-(lib|frameworks))-dirs
-        | ((other|default)-)?extensions
-        | build-tools
-        | buildable
-        | ((install|autogen)-)?includes
-        | (c(xx)?|js)-sources
-        | extra-
-          ( ((ghci|bundled)-)?libraries
-          | (dynamic-)?library-flavours
-          )
-        | (cmm|cxx|cc|cpp|ld|ghc(-(prof|shared))?)-options
-        | (asm|cmm)-(sources|options)
-        | other-languages
-        | default-language
-        | frameworks
-        | default
-        | manual
-        | location
-        | branch
-        | tag
+        ( haddock-(all|hoogle|html|foreign-libraries|executables
+                  |tests|benchmarks|internal|(hscolour-)?css|hyperlink-source
+                  |quickjump|(contents|index|html)-location|base-url
+                  |(resources|output)-dir|use-unicode|for-hackage)
+        | extra-prog-path 
+        | flags 
+        | library-(vanilla|for-ghci|stripping)
+        | shared 
+        | static 
+        | executable-(dynamic|static|stripping)
+        | ((library|executable)-)?profiling(-(shared|detail))?
+        | optimization 
+        | program-(prefix|suffix)
+        | extra-(lib|framework|include)-dirs(-static)?
+        | split-(sections|objs)
+        | (run-)?tests 
+        | benchmarks 
+        | relocatable
+        | (debug|build)-info
+        | documentation
+        | test-((machine-)?log|show-details|keep-tix-files
+                |wrapper|fail-when-no-test-suites)
+        | coverage 
+        | (benchmark|ghc|test|configure)-options
+        | type 
+        | location 
+        | tag 
         | subdir
-        | exposed(-modules)?
-        | (other|virtual|autogen|reexported)-modules
-        | visibility
-        | main-is
-        | type
-        | test-module
-        | description
-        | mixins
-        | import
-        | signatures
-        | scope
-        | lib-version-(version|linux)
-        | mod-def-file
-        | options
         | x-\w[1-9\w_-]*
         ):
   - name: keyword.operator.cabal
@@ -77,20 +92,12 @@ patterns:
   - name: entity.name.section.cabal
     match: |
       ^(?ix:
-        ( library
-        | custom-setup
-        )
+        ( program-options )
       )$
   - match: |
       ^(?ix:
-        ( executable
-        | flag
-        | test-suite
-        | benchmark
-        | common
+        ( package
         | source-repository
-        | library
-        | foreign-library
         )
       )( |\t)+([\w\-_]+)$
     captures:
