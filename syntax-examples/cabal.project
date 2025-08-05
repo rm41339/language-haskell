@@ -1,0 +1,15 @@
+-- A comment
+
+packages: test-name
+import: file
+
+package example
+  flags: +flags
+
+source-repository repo
+  tests: false
+  benchmarks: false
+  configure-options:
+
+program-options
+  ghc-options: -option
