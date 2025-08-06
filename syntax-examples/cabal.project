@@ -2,14 +2,24 @@
 
 packages: test-name
 import: file
+verbose: 0
+allow-older: False
+haddock-keep-temp-files: False
 
 package example
   flags: +flags
+  tests: False
+  benchmarks: False
+  extra-lib-dirs: test
 
 source-repository repo
-  tests: false
-  benchmarks: false
-  configure-options:
-
+  type: git
+  location: test 
+  tag: test 
+  subdir: test
+  
 program-options
-  ghc-options: -option
+  shared: False 
+  ghc-options: -test
+
+  
