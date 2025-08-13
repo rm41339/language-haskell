@@ -54,9 +54,9 @@ patterns:
     match: |
       (?ix)^[ \t]+
         ( haddock-(all|hoogle|html|foreign-libraries|executables
-                  |tests|benchmarks|internal|(hscolour-)?css|hyperlink-source
-                  |quickjump|(contents|index|html)-location|base-url
-                  |(resources|output)-dir|use-unicode|for-hackage
+                  |tests|benchmarks|internal|(hscolour-)?css
+                  |hyperlink-source|quickjump|(contents|index|html)-location
+                  |base-url|(resources|output)-dir|use-unicode|for-hackage
                   |keep-temp-files)
         | extra-prog-path 
         | (strong-)?flags 
